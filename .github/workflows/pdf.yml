@@ -1,0 +1,25 @@
+name: pdf
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: tex to pdf
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv.tex
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+
+      - name: upload artifact to workflow tab
+        uses: actions/upload-artifact@v2
+        with:
+          name: cv.pdf
+          path: cv.pdf
