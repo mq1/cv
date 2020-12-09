@@ -18,9 +18,10 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           extra_system_packages: inkscape
+          post_compile: "mkdir -p public && mv cv.pdf public"
 
-      - name: upload artifact to workflow tab
-        uses: actions/upload-artifact@v2
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: cv.pdf
-          path: cv.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
