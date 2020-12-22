@@ -12,14 +12,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: tex to pdf
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/texlive-action/full@v1
         with:
-          root_file: cv.tex
-          latexmk_use_lualatex: true
-          latexmk_shell_escape: true
-          extra_system_packages: inkscape
-          pre_compile: "tlmgr install inter"
-          post_compile: "mkdir -p public && mv cv.pdf public"
+          run: |
+            apk add --no-cache make inkscape && \
+            tlmgr update --self && \
+            tlmgr install inter && \
+            make pdf
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
