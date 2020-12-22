@@ -14,8 +14,8 @@ jobs:
 
       - name: install deps
         run: |
-          apk add --no-cache make inkscape && \
-          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh
+          apk add --no-cache wget make inkscape && \
+          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh && \
           ~/.TinyTeX/bin/x86_64-linux/tlmgr install emoji moresize paracol qrcode svg inter
 
       - name: generate the pdf
