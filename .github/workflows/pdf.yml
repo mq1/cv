@@ -18,6 +18,7 @@ jobs:
           latexmk_use_lualatex: true
           latexmk_shell_escape: true
           extra_system_packages: inkscape
+          pre_compile: "tlmgr install inter"
           post_compile: "mkdir -p public && mv cv.pdf public"
 
       - name: Deploy
