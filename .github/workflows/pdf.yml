@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: r-lib/actions/setup-tinytex@v1
+
       - run: |
-          sudo apt update && sudo apt install -y make inkscape && \
-          wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh && \
-          export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux" && \
+          sudo apt update && sudo apt install -y inkscape && \
           tlmgr install emoji moresize paracol qrcode svg inter && \
           make pdf
 
