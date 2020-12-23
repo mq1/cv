@@ -8,18 +8,15 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container: alpine
     steps:
       - uses: actions/checkout@v2
 
-      - name: install deps
-        run: |
-          apk add --no-cache wget perl make inkscape && \
+      - run: |
+          apt install -y make inkscape && \
           wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh && \
-          ~/.TinyTeX/bin/x86_64-linux/tlmgr install emoji moresize paracol qrcode svg inter
-
-      - name: generate the pdf
-        run: make pdf
+          export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux" && \
+          tlmgr install emoji moresize paracol qrcode svg inter && \
+          make pdf
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
