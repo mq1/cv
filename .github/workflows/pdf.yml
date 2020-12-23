@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: r-lib/actions/setup-tinytex@v1
 
       - run: |
           sudo apt update && sudo apt install -y inkscape && \
-          tlmgr install emoji moresize paracol qrcode svg inter && \
+          tlmgr install koma-script emoji moresize paracol qrcode svg inter && \
           make pdf
 
       - name: Deploy
