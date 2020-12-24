@@ -24,7 +24,8 @@
 \setmainfont{Inter}
 
 % paracol things (columns)
-\columnratio{0.33}
+\columnratio{0.35}
+\setlength{\columnsep}{20pt}
 \begin{paracol}{2}
 
 \begin{tcolorbox}[colback=white]
@@ -42,39 +43,40 @@
     \href{https://github.com/quarno}{\includesvg[height=10pt]{github-original} quarno} \hfill | \hfill
     \href{https://www.linkedin.com/in/quarno}{\includesvg[height=10pt]{linkedin-original} quarno} \hfill | \hfill
     \href{https://t.me/quarno}{\includesvg[height=10pt]{telegram} quarno}
+\end{tcolorbox}
 
-    \vspace{20pt}
-    \tcblower
-    \vspace{20pt}
+\vspace{40pt}
 
-    \center
-
-    \subsection*{Languages}
+\begin{tcolorbox}[title=\emoji{speaking-head} Languages,colback=white]
     \emoji{it} Italian (Mother tongue) \\[4pt]
     \emoji{gb} English (CEFR C1)
+\end{tcolorbox}
 
-    \subsection*{Operating Systems}
+\begin{tcolorbox}[title=\emoji{desktop-computer} Operating Systems,colback=white]
     \includesvg[height=10pt]{redhat-original} Fedora/RHEL/CentOS \\[4pt]
     \includesvg[height=10pt]{ubuntu-plain} Ubuntu \\[4pt]
     \includesvg[height=10pt]{debian-original} Debian \\[4pt]
     \includesvg[height=10pt]{windows8-original} Windows
+\end{tcolorbox}
 
-    \subsection*{Programming}
+\begin{tcolorbox}[title=\emoji{man-technologist} Programming,colback=white]
     \includesvg[height=10pt]{python-original} Python \\[4pt]
     \includesvg[height=10pt]{go-original} Go \\[4pt]
     \includesvg[height=10pt]{c-original} C \\[4pt]
     \includesvg[height=10pt]{csharp-original} C\# \\[4pt]
     \includesvg[height=10pt]{mysql-original} (My)SQL \\[4pt]
-    \includesvg[height=10pt]{intel} x86 Assembly \\[80pt]
-
-    \qrcode[height=3cm]{https://quarno.xyz/}
-    \vspace{30pt}
+    \includesvg[height=10pt]{intel} x86 Assembly
 \end{tcolorbox}
+
+\vspace{40pt}
+\begin{center}
+    \qrcode[height=3cm]{https://quarno.xyz/}
+\end{center}
+\vspace{40pt}
 
 \switchcolumn
 
 \maketitle
-\center
 
 %
 % EDUCATION
