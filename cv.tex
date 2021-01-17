@@ -1,18 +1,19 @@
-%!TEX program = lualatex
 \documentclass{article}
 \usepackage[a4paper, left=1cm, right=1cm, top=1cm, bottom=1cm]{geometry}
-\usepackage{fontspec}
 \usepackage{moresize}
 \usepackage{graphicx}
 \usepackage{paracol}
-\usepackage{emoji}
 \usepackage[fixed]{fontawesome5}
 \usepackage{qrcode}
 \usepackage[colorlinks=true,urlcolor=cyan]{hyperref}
 \usepackage{tcolorbox}
 \usepackage{tikz}
-\usepackage{svg}
-\svgpath{icons/}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[T1]{fontenc}
+\usepackage[usefilenames,DefaultFeatures={Ligatures=Common}]{plex-otf}
+\renewcommand*\familydefault{\sfdefault}
 
 % disable page numbering
 \pagenumbering{gobble}
@@ -22,7 +23,6 @@
 \date{\today}
 
 \begin{document}
-\setmainfont{Inter}
 
 % paracol things (columns)
 \columnratio{0.34}
@@ -41,7 +41,6 @@
     \vspace{0pt}
 
     \tcblower
-    \small
 
     \faGlobe \ \href{https://quarno.xyz/}{quarno.xyz} \\[8pt]
     \faEnvelope \ \href{mailto:manuelquarneti@gmail.com}{manuelquarneti@gmail.com} \\[8pt]
@@ -51,35 +50,34 @@
     \faTelegram \ \href{https://t.me/quarno}{quarno}
 \end{tcolorbox}
 
-\vspace{35pt}
+\vspace{50pt}
 
 \begin{tcolorbox}[title=\faLanguage \ Languages,colback=white,arc=0pt]
-    \emoji{it} Italian (Mother tongue) \\[4pt]
-    \emoji{england} English (CEFR C1)
+    \includegraphics[width=10pt]{it} \ Italian (Mother tongue) \\[4pt]
+    \includegraphics[width=10pt]{gb-eng} \ English (CEFR C1)
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\faServer \ Operating Systems,colback=white,arc=0pt]
-    \includesvg[width=10pt]{redhat-original} Fedora/RHEL/CentOS \\[4pt]
-    \includesvg[width=10pt]{ubuntu-plain} Ubuntu \\[4pt]
-    \includesvg[width=10pt]{debian-original} Debian \\[4pt]
-    \includesvg[width=10pt]{windows8-original} Windows
+    \textcolor[HTML]{EE0000}{\faRedhat} Fedora/RHEL/CentOS \\[4pt]
+    \textcolor[HTML]{E95420}{\faUbuntu} Ubuntu/Debian \\[4pt]
+    \textcolor[HTML]{0078D6}{\faWindows} Windows
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\faCode \ Programming,colback=white,arc=0pt]
-    \includesvg[width=10pt]{python-original} Python \\[0pt]
-    \includesvg[width=10pt]{go-original} Go \\[4pt]
-    \includesvg[width=10pt]{c-original} C \\[4pt]
-    \includesvg[width=10pt]{csharp-original} C\# \\[4pt]
-    \includesvg[width=10pt]{mysql-original} (My)SQL \\[4pt]
-    \includesvg[width=10pt]{intel} x86 Assembly
+    \faPython \ Python \\[4pt]
+    \faGoogle \ Go \\[4pt]
+    \faFileCode \ C \\[4pt]
+    \faMicrosoft \ C\# \\[4pt]
+    \faDatabase \ (My)SQL \\[4pt]
+    \faMicrochip \ x86 Assembly
 \end{tcolorbox}
 
-\vspace{35pt}
+\vspace{50pt}
 \begin{center}
     \hypersetup{urlcolor=black}
     \qrcode[height=3cm]{MECARD:N:Quarneti,Manuel;EMAIL:manuelquarneti@gmail.com;URL:https://quarno.xyz}
 \end{center}
-\vspace{35pt}
+\vspace{50pt}
 
 \switchcolumn
 

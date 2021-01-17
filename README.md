@@ -2,8 +2,11 @@
 
 My cv (with CI!)
 
+## Building
+```sh
+tectonic cv.tex
+```
+
 ## Using
-* [LuaTex](http://www.luatex.org/)
-* [devicon](https://devicon.dev/)
-* [Super Tiny Icons](https://github.com/edent/SuperTinyIcons)
-* Apple Color Emoji
+* [tectonic](https://tectonic-typesetting.github.io/)
+* [flag-icon-css](https://flagicons.lipis.dev/)
