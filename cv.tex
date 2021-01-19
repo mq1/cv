@@ -6,12 +6,15 @@
 \usepackage[fixed]{fontawesome5}
 \usepackage{qrcode}
 \usepackage[colorlinks=true,urlcolor=cyan]{hyperref}
-\usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{xcolor}
 
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+
+% boxes
+\usepackage{tcolorbox}
+\tcbset{colback=white,arc=0pt}
 
 % font config
 \usepackage[T1]{fontenc}
@@ -35,7 +38,7 @@
 \setlength{\columnsep}{20pt}
 \begin{paracol}{2}
 
-\begin{tcolorbox}[colback=white,arc=0pt]
+\begin{tcolorbox}
     \vspace{10pt}
 
     \begin{center}
@@ -58,18 +61,18 @@
 
 \vspace{45pt}
 
-\begin{tcolorbox}[title=\faLanguage \ Languages,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faLanguage \ Languages]
     \includegraphics[width=10pt]{it} \ Italian (Mother tongue) \\
     \includegraphics[width=10pt]{gb-eng} \ English (CEFR C1)
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\faServer \ Operating Systems,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faServer \ Operating Systems]
     \textcolor[HTML]{EE0000}{\faRedhat} Fedora/RHEL/CentOS \\
     \textcolor[HTML]{E95420}{\faUbuntu} Ubuntu/Debian \\
     \textcolor[HTML]{0078D6}{\faWindows} Windows
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\faCode \ Programming,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faCode \ Programming]
     \faPython \ Python \\
     \faGoogle \ Go \\
     \faFileCode \ C \\
@@ -97,20 +100,13 @@
 
 \section*{\faGraduationCap \ Education}
 
-\begin{tcolorbox}[
-    title=\faBookOpen \ \href
-        {https://corsi.unibo.it/1cycle/ComputerScienceEngineering}
-        {Bachelor in Computer Science and Engineering}
-    ,
-    colback=white,
-    arc=0pt
-]
+\begin{tcolorbox}[title=\faBookOpen \ \href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}]
     \faCalendar* 2019 - Now \hfill | \hfill
     \faUniversity \ \href{https://www.unibo.it/en/}{University of Bologna} \hfill | \hfill
     \faCity \ \href{https://www.openstreetmap.org/relation/9713588}{Cesena FC, Italy}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\faBook \ High School Diploma in Information Technology,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faBook \ High School Diploma in Information Technology]
     \faCalendar* 2014 - 2019 \hfill | \hfill
     \faSchool \ \href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci} \hfill | \hfill
     \faCity \ \href{https://www.openstreetmap.org/relation/2227656}{Faenza RA, Italy}
@@ -124,7 +120,7 @@
 
 \section*{\faBriefcase \ Experience}
 
-\begin{tcolorbox}[title=\faLaptopCode \ Software Developer Internship,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faLaptopCode \ Software Developer Internship]
     \faCalendar* 2018 \textasciitilde 1 month \hfill | \hfill
     \faBuilding \ \href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.} \hfill | \hfill
     \faCity \ \href{https://www.openstreetmap.org/node/1864397767}{Faenza RA, Italy}
@@ -137,7 +133,7 @@
     \faWordpress \ WordPress website management
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\faLaptopCode \ Software Developer Internship,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faLaptopCode \ Software Developer Internship]
     \faCalendar* 2018 \textasciitilde 1 month \hfill | \hfill
     \faIndustry \ \href{http://www.bucchi.it/en/}{Bucchi s.r.l.} \hfill | \hfill
     \faCity \ \href{https://www.openstreetmap.org/node/4752486846}{Lugo RA, Italy}
@@ -149,7 +145,7 @@
     \faFlask \ Flask web app development
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=\faTools \ Computer Technician Internship,colback=white,arc=0pt]
+\begin{tcolorbox}[title=\faTools \ Computer Technician Internship]
     \faCalendar* 2017 \textasciitilde 1.5 months \hfill | \hfill
     \faBuilding \ \href{https://www.t4lab.it/}{T4 LAB} \hfill | \hfill
     \faCity \ \href{https://www.openstreetmap.org/node/4751590216}{Faenza RA, Italy}
