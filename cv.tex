@@ -1,25 +1,10 @@
 \documentclass{article}
 \usepackage[a4paper, left=1cm, right=1cm, top=1cm, bottom=1cm]{geometry}
-\usepackage{moresize}
-\usepackage{graphicx}
-\usepackage{paracol}
-\usepackage[fixed]{fontawesome5}
-\usepackage{qrcode}
-\usepackage[colorlinks=true,urlcolor=cyan]{hyperref}
-\usepackage{tikz}
-\usepackage{xcolor}
 
-\usepackage{graphicx}
-\graphicspath{ {./images/} }
-
-% boxes
-\usepackage{tcolorbox}
-\tcbset{colback=white,arc=0pt}
-
-% font config
+% font settings
 \usepackage[T1]{fontenc}
-\usepackage[usefilenames,DefaultFeatures={Ligatures=Common}]{plex-otf}
-\renewcommand*\familydefault{\sfdefault}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{plex-sans}
 
 % line spacing
 \renewcommand{\baselinestretch}{1.5}
@@ -27,136 +12,153 @@
 % disable page numbering
 \pagenumbering{gobble}
 
-\title{\HUGE \textbf{MANUEL QUARNETI} \\[-20pt]}
+% packages
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\tcbset{colback=white,left=2pt,right=2pt}
+\usepackage[fixed]{fontawesome5}
+\usepackage[colorlinks,urlcolor=cyan]{hyperref}
+\usepackage{moresize}
+\usepackage{paracol}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{tikz}
+\usepackage{qrcode}
+
+% custom commands
+\newcommand{\triple}[3]{
+    \begin{tabularx}{\textwidth} {@{}>{\raggedright\arraybackslash}X >{\centering\arraybackslash}c >{\raggedleft\arraybackslash}X@{}}
+    #1 & #2 & #3
+    \end{tabularx}
+}
+
+
+\title{\vspace{-40pt} \HUGE \bfseries Manuel \\[-20pt] Quarneti \vspace{-40pt}}
 \author{}
 \date{\today}
 
 \begin{document}
 
-% paracol things (columns)
-\columnratio{0.34}
-\setlength{\columnsep}{20pt}
-\begin{paracol}{2}
+\begin{paracol}{3}
+    \begin{tikzpicture}[baseline=(ola.center),inner sep=0pt]
+        \clip (0,0)  circle (2cm) node (ola) {\includegraphics[width=4cm]{me}};
+    \end{tikzpicture}
 
-\begin{tcolorbox}
-    \vspace{10pt}
+    \switchcolumn
+
+    \maketitle
+
+    \switchcolumn
+
+    \begin{flushright}
+        \href{https://mq1.eu/}{mq1.eu} \ \faGlobe \\
+        \href{mailto:manuelquarneti@gmail.com}{manuelquarneti@gmail.com} \ \faEnvelope \\
+        \href{https://www.openstreetmap.org/relation/43112}{Cotignola RA, Italy} \ \faCity \\
+        \href{https://github.com/mq1}{mq1} \ \faGithub \\
+        \href{https://www.linkedin.com/in/mq1}{mq1} \ \faLinkedin \\
+        \href{https://t.me/quarno}{quarno} \ \faTelegram
+    \end{flushright}
+\end{paracol}
+
+\columnratio{0.75}
+\begin{paracol}{2}
+    \section*{\faGraduationCap \ Education}
+
+    \begin{tcolorbox}[title=\href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}]
+        \triple
+            {\faCalendar* 2019 - Now}
+            {\href{https://www.unibo.it/en/}{University of Bologna}}
+            {\href{https://www.openstreetmap.org/relation/42809}{Cesena FC, Italy} \ \faCity}
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=High School Diploma in Information Technology]
+        \triple
+            {\faCalendar* 2014 - 2019}
+            {\href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci}}
+            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+    \end{tcolorbox}
+
+    \section*{\faBriefcase \ Experience}
+
+    \begin{tcolorbox}[title=Software Developer Internship]
+        \triple
+            {\faCalendar* 2018 \textasciitilde 1 month}
+            {\href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.}}
+            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+        \tcblower
+
+        \faDesktop \ Windows desktop app development (.NET) \\
+        \faBug \ Website debugging \\
+        \faCoffee \ JBoss web app frontend development \\
+        \faWordpress \ WordPress website management
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=Software Developer Internship]
+        \triple
+            {\faCalendar* 2018 \textasciitilde 1 month}
+            {\href{http://www.bucchi.it/en/}{Bucchi s.r.l.}}
+            {\href{https://www.openstreetmap.org/relation/43140}{Lugo RA, Italy} \ \faCity}
+        \tcblower
+
+        \faDatabase \ Data management (PostgreSQL) \\
+        \faPython \ Python scripting \\
+        \faFlask \ Flask web app development
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=Computer Technician Internship]
+        \triple
+            {\faCalendar* 2017 \textasciitilde 1.5 months}
+            {\href{https://www.t4lab.it/}{T4 LAB}}
+            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+        \tcblower
+
+        \faLaptop \ PCs repair \\
+        \faShieldVirus \ Malware removal \\
+        \faRecycle \ Windows mantainance and troubleshooting \\
+        \faHdd \ Disk backups and OS installations
+    \end{tcolorbox}
+
+    \switchcolumn
+
+    \section*{\faLightbulb \ Skills}
+
+    \begin{tcolorbox}[title=Languages]
+        \includegraphics[width=10pt]{it} \ Italian (Mother tongue) \\
+        \includegraphics[width=10pt]{gb-eng} \ English (CEFR C1)
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=Operating Systems]
+        \textcolor[HTML]{EE0000}{\faRedhat} Fedora/RHEL/CentOS \\
+        \textcolor[HTML]{E95420}{\faUbuntu} Ubuntu/Debian \\
+        \textcolor[HTML]{0078D6}{\faWindows} Windows
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=Code]
+        \faPython \ Python \\
+        \faGoogle \ Go \\
+        \faFileCode \ C \\
+        \faJava \ Java \\
+        \faDatabase \ (My)SQL \\
+        \faMicrochip \ x86 Assembly \\
+        \faHtml5 HTML5 \\
+        \faCss3 CSS3 \\
+        \faJs \ ECMAScript \\
+        \faTerminal \ BASH \\
+        \faFilePdf \ LaTeX
+    \end{tcolorbox}
+
+    \begin{tcolorbox}[title=Tools]
+        \faGithub \ GitHub \\
+        \faGit \ Git \\
+        \faGit* Hugo \\
+        \faJs \ Alpine.js
+    \end{tcolorbox}
+
+    \vspace{20pt}
 
     \begin{center}
-        \begin{tikzpicture}[baseline=(ola.center),inner sep=0pt]
-            \clip (0,0)  circle (2cm) node (ola) {\includegraphics[width=4cm]{me.jpg}};
-        \end{tikzpicture}
+        \hypersetup{urlcolor=black}
+        \qrcode[height=85pt]{MECARD:N:Quarneti,Manuel;EMAIL:manuelquarneti@gmail.com;URL:https://mq1.eu}
     \end{center}
-
-    \vspace{0pt}
-
-    \tcblower
-
-    \faGlobe \ \href{https://mq1.eu/}{mq1.eu} \\
-    \faEnvelope \ \href{mailto:manuelquarneti@gmail.com}{manuelquarneti@gmail.com} \\
-    \faCity \ \href{https://www.openstreetmap.org/relation/43112}{Cotignola RA, Italy} \\
-    \faGithub \ \href{https://github.com/mq1}{mq1} \\
-    \faLinkedin \ \href{https://www.linkedin.com/in/mq1}{mq1} \\
-    \faTelegram \ \href{https://t.me/quarno}{quarno}
-\end{tcolorbox}
-
-\vspace{45pt}
-
-\begin{tcolorbox}[title=\faLanguage \ Languages]
-    \includegraphics[width=10pt]{it} \ Italian (Mother tongue) \\
-    \includegraphics[width=10pt]{gb-eng} \ English (CEFR C1)
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=\faServer \ Operating Systems]
-    \textcolor[HTML]{EE0000}{\faRedhat} Fedora/RHEL/CentOS \\
-    \textcolor[HTML]{E95420}{\faUbuntu} Ubuntu/Debian \\
-    \textcolor[HTML]{0078D6}{\faWindows} Windows
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=\faCode \ Programming]
-    \faPython \ Python \\
-    \faGoogle \ Go \\
-    \faFileCode \ C \\
-    \faMicrosoft \ C\# \\
-    \faDatabase \ (My)SQL \\
-    \faMicrochip \ x86 Assembly
-\end{tcolorbox}
-
-\vspace{45pt}
-\begin{center}
-    \hypersetup{urlcolor=black}
-    \qrcode[height=85pt]{MECARD:N:Quarneti,Manuel;EMAIL:manuelquarneti@gmail.com;URL:https://mq1.eu}
-\end{center}
-\vspace{45pt}
-
-\switchcolumn
-
-\maketitle
-
-%
-% EDUCATION
-%
-
-\vfill
-
-\section*{\faGraduationCap \ Education}
-
-\begin{tcolorbox}[title=\faBookOpen \ \href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}]
-    \faCalendar* 2019 - Now \hfill | \hfill
-    \faUniversity \ \href{https://www.unibo.it/en/}{University of Bologna} \hfill | \hfill
-    \faCity \ \href{https://www.openstreetmap.org/relation/42809}{Cesena FC, Italy}
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=\faBook \ High School Diploma in Information Technology]
-    \faCalendar* 2014 - 2019 \hfill | \hfill
-    \faSchool \ \href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci} \hfill | \hfill
-    \faCity \ \href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy}
-\end{tcolorbox}
-
-%
-% EXPERIENCE
-%
-
-\vfill
-
-\section*{\faBriefcase \ Experience}
-
-\begin{tcolorbox}[title=\faLaptopCode \ Software Developer Internship]
-    \faCalendar* 2018 \textasciitilde 1 month \hfill | \hfill
-    \faBuilding \ \href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.} \hfill | \hfill
-    \faCity \ \href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy}
-
-    \tcblower
-
-    \faDesktop \ Windows desktop app development (.NET) \\
-    \faBug \ Website debugging \\
-    \faCoffee \ JBoss web app frontend development \\
-    \faWordpress \ WordPress website management
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=\faLaptopCode \ Software Developer Internship]
-    \faCalendar* 2018 \textasciitilde 1 month \hfill | \hfill
-    \faIndustry \ \href{http://www.bucchi.it/en/}{Bucchi s.r.l.} \hfill | \hfill
-    \faCity \ \href{https://www.openstreetmap.org/relation/43140}{Lugo RA, Italy}
-
-    \tcblower
-
-    \faDatabase \ Data management and visualization (PostgreSQL) \\
-    \faPython \ Python scripting \\
-    \faFlask \ Flask web app development
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=\faTools \ Computer Technician Internship]
-    \faCalendar* 2017 \textasciitilde 1.5 months \hfill | \hfill
-    \faBuilding \ \href{https://www.t4lab.it/}{T4 LAB} \hfill | \hfill
-    \faCity \ \href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy}
-
-    \tcblower
-
-    \faLaptop \ PCs repair \\
-    \faShieldVirus \ Malware removal \\
-    \faRecycle \ Windows mantainance and troubleshooting \\
-    \faHdd \ Disk backups and OS installations
-\end{tcolorbox}
-
 \end{paracol}
 \end{document}

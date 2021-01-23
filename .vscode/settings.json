@@ -1,5 +1,5 @@
 {
-    "latex-workshop.latex.external.build.command": "/home/quarno/miniconda3/bin/tectonic",
+    "latex-workshop.latex.external.build.command": "/home/mq1/miniconda3/bin/tectonic",
     "latex-workshop.latex.external.build.args": [
         "cv.tex"
     ]
