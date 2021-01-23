@@ -27,9 +27,11 @@
 
 % custom commands
 \newcommand{\triple}[3]{
-    \begin{tabularx}{\textwidth} {@{}>{\raggedright\arraybackslash}X >{\centering\arraybackslash}c >{\raggedleft\arraybackslash}X@{}}
+    \vspace{-4pt}
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\centering\arraybackslash}c >{\raggedleft\arraybackslash}X@{}}
     #1 & #2 & #3
     \end{tabularx}
+    \vspace{-16pt}
 }
 
 
@@ -78,6 +80,8 @@
             {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
     \end{tcolorbox}
 
+    \vfill
+
     \section*{\faBriefcase \ Experience}
 
     \begin{tcolorbox}[title=Software Developer Internship]
@@ -117,6 +121,8 @@
         \faRecycle \ Windows mantainance and troubleshooting \\
         \faHdd \ Disk backups and OS installations
     \end{tcolorbox}
+
+    \vfill
 
     \switchcolumn
 
