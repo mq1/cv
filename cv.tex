@@ -14,8 +14,6 @@
 
 % packages
 \usepackage{tabularx}
-\usepackage{tcolorbox}
-\tcbset{colback=white,left=2pt,right=2pt}
 \usepackage[fixed]{fontawesome5}
 \usepackage[colorlinks,urlcolor=cyan]{hyperref}
 \usepackage{moresize}
@@ -26,14 +24,28 @@
 \usepackage{qrcode}
 
 % custom commands
-\newcommand{\triple}[3]{
-    \vspace{-4pt}
-    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\centering\arraybackslash}c >{\raggedleft\arraybackslash}X@{}}
-    #1 & #2 & #3
+\newcommand{\event}[3]{
+    \begin{tabularx}{\linewidth}{| >{\raggedright\arraybackslash}X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X |}
+        \hline
+        #1 & #2 & #3 \\
+        \hline
     \end{tabularx}
-    \vspace{-16pt}
+    \vspace{-10pt}
 }
 
+\let\oldsection\section
+\renewcommand{\section}[1]{
+    \oldsection*{#1}
+    \vspace{-20pt}
+    \rule{\linewidth}{2pt}
+    \vspace{-30pt}
+}
+
+\let\oldsubsection\subsection
+\renewcommand{\subsection}[1]{
+    \oldsubsection*{#1}
+    \vspace{-5pt}
+}
 
 \title{\vspace{-40pt} \HUGE \bfseries MANUEL \\[-20pt] QUARNETI \vspace{-40pt}}
 \author{}
@@ -63,104 +75,89 @@
 \end{paracol}
 
 \columnratio{0.75}
+\setlength{\columnsep}{70pt}
 \begin{paracol}{2}
-    \section*{\faGraduationCap \ Education}
+    \section{\faGraduationCap \ Education}
 
-    \begin{tcolorbox}[title=\href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}]
-        \triple
-            {\faCalendar* 2019 - Now}
-            {\href{https://www.unibo.it/en/}{University of Bologna}}
-            {\href{https://www.openstreetmap.org/relation/42809}{Cesena FC, Italy} \ \faCity}
-    \end{tcolorbox}
+    \subsection{\href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}}
+    \event
+        {\faCalendar* 2019 - Now}
+        {\href{https://www.unibo.it/en/}{University of Bologna}}
+        {\href{https://www.openstreetmap.org/relation/42809}{Cesena FC, Italy} \ \faCity}
 
-    \begin{tcolorbox}[title=High School Diploma in Information Technology]
-        \triple
-            {\faCalendar* 2014 - 2019}
-            {\href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci}}
-            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
-    \end{tcolorbox}
+    \subsection{High School Diploma in Information Technology}
+    \event
+        {\faCalendar* 2014 - 2019}
+        {\href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci}}
+        {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
 
-    \vfill
 
-    \section*{\faBriefcase \ Experience}
+    \section{\faBriefcase \ Experience}
 
-    \begin{tcolorbox}[title=Software Developer Internship]
-        \triple
-            {\faCalendar* 2018 \textasciitilde 1 month}
-            {\href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.}}
-            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
-        \tcblower
+    \subsection{Software Developer Internship}
+    \event
+        {\faCalendar* 2018 \textasciitilde 1 month}
+        {\href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.}}
+        {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+    
+    \noindent
+    \faDesktop \ Windows desktop app development (.NET) \\
+    \faBug \ Website debugging \\
+    \faCoffee \ JBoss web app frontend development \\
+    \faWordpress \ WordPress website management
 
-        \faDesktop \ Windows desktop app development (.NET) \\
-        \faBug \ Website debugging \\
-        \faCoffee \ JBoss web app frontend development \\
-        \faWordpress \ WordPress website management
-    \end{tcolorbox}
+    \subsection{Software Developer Internship}
+    \event
+        {\faCalendar* 2018 \textasciitilde 1 month}
+        {\href{http://www.bucchi.it/en/}{Bucchi s.r.l.}}
+        {\href{https://www.openstreetmap.org/relation/43140}{Lugo RA, Italy} \ \faCity}
 
-    \begin{tcolorbox}[title=Software Developer Internship]
-        \triple
-            {\faCalendar* 2018 \textasciitilde 1 month}
-            {\href{http://www.bucchi.it/en/}{Bucchi s.r.l.}}
-            {\href{https://www.openstreetmap.org/relation/43140}{Lugo RA, Italy} \ \faCity}
-        \tcblower
+    \noindent
+    \faDatabase \ Data management (PostgreSQL) \\
+    \faPython \ Python scripting \\
+    \faFlask \ Flask web app development
 
-        \faDatabase \ Data management (PostgreSQL) \\
-        \faPython \ Python scripting \\
-        \faFlask \ Flask web app development
-    \end{tcolorbox}
+    \subsection{Computer Technician Internship}
+    \event
+        {\faCalendar* 2017 \textasciitilde 1.5 months}
+        {\href{https://www.t4lab.it/}{T4 LAB}}
+        {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
 
-    \begin{tcolorbox}[title=Computer Technician Internship]
-        \triple
-            {\faCalendar* 2017 \textasciitilde 1.5 months}
-            {\href{https://www.t4lab.it/}{T4 LAB}}
-            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
-        \tcblower
+    \noindent
+    \faLaptop \ PCs repair \\
+    \faShieldVirus \ Malware removal \\
+    \faRecycle \ Windows mantainance and troubleshooting \\
+    \faHdd \ Disk backups and OS installations
 
-        \faLaptop \ PCs repair \\
-        \faShieldVirus \ Malware removal \\
-        \faRecycle \ Windows mantainance and troubleshooting \\
-        \faHdd \ Disk backups and OS installations
-    \end{tcolorbox}
-
-    \vfill
 
     \switchcolumn
+    \flushright
 
-    \section*{\faLightbulb \ Skills}
+    \section{Skills \ \faLightbulb}
 
-    \begin{tcolorbox}[title=Languages]
-        \includegraphics[width=10pt]{it} \ Italian (Mother tongue) \\
-        \includegraphics[width=10pt]{gb-eng} \ English (CEFR C1)
-    \end{tcolorbox}
+    \subsection{Languages}
+    Italian (Mother tongue) \ \includegraphics[width=10pt]{it} \\
+    English (CEFR C1) \ \includegraphics[width=10pt]{gb-eng}
 
-    \begin{tcolorbox}[title=Operating Systems]
-        \textcolor[HTML]{EE0000}{\faRedhat} Fedora/RHEL/CentOS \\
-        \textcolor[HTML]{E95420}{\faUbuntu} Ubuntu/Debian \\
-        \textcolor[HTML]{0078D6}{\faWindows} Windows
-    \end{tcolorbox}
+    \subsection{Operating Systems}
+    Fedora/RHEL/CentOS \ \textcolor[HTML]{EE0000}{\faRedhat} \\
+    Ubuntu/Debian \ \textcolor[HTML]{E95420}{\faUbuntu} \\
+    Windows \ \textcolor[HTML]{0078D6}{\faWindows}
 
-    \begin{tcolorbox}[title=Code]
-        \faPython \ Python \\
-        \faGoogle \ Go \\
-        \faFileCode \ C \\
-        \faJava \ Java \\
-        \faDatabase \ (My)SQL \\
-        \faMicrochip \ x86 Assembly \\
-        \faHtml5 HTML5 \\
-        \faCss3 CSS3 \\
-        \faJs \ ECMAScript \\
-        \faTerminal \ BASH \\
-        \faFilePdf \ LaTeX
-    \end{tcolorbox}
+    \subsection{Code}
+    Python \ \faPython \\
+    Go \ \faGoogle \\
+    C \ \faFileCode \\
+    Java \ \faJava\\
+    (My)SQL \ \faDatabase \\
+    x86 Assembly \ \faMicrochip \\
+    HTML5 \ \faHtml5 \\
+    CSS3 \ \faCss3 \\
+    ECMAScript \ \faJs \\
+    BASH \ \faTerminal \\
+    LaTeX \ \faFilePdf
 
-    \begin{tcolorbox}[title=Tools]
-        \faGithub \ GitHub \\
-        \faGit \ Git \\
-        \faGit* Hugo \\
-        \faJs \ Alpine.js
-    \end{tcolorbox}
-
-    \vspace{20pt}
+    \vspace{100pt}
 
     \begin{center}
         \hypersetup{urlcolor=black}
