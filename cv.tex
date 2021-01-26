@@ -13,8 +13,12 @@
 \pagenumbering{gobble}
 
 % colors
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \definecolor{myblue}{HTML}{0070F3}
+
+% table settings
+\setlength{\arrayrulewidth}{2pt}
+\arrayrulecolor[HTML]{E5E7EB}
 
 % packages
 \usepackage{tabularx}
@@ -29,10 +33,8 @@
 
 % custom commands
 \newcommand{\event}[3]{
-    \begin{tabularx}{\linewidth}{| >{\raggedright\arraybackslash}X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X |}
-        \hline
-        #1 & #2 & #3 \\
-        \hline
+    \begin{tabularx}{\linewidth}{| >{\raggedright\arraybackslash}X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X}
+        \rowcolor[HTML]{F6F8FA} #1 & #2 & #3
     \end{tabularx}
     \vspace{-10pt}
 }
