@@ -12,16 +12,27 @@
 % disable page numbering
 \pagenumbering{gobble}
 
-% disable paragraph indent
+% disable paragraph indentation
 \setlength{\parindent}{0pt}
 
 % colors
-\usepackage[table]{xcolor}
+\usepackage{xcolor}
 \definecolor{myblue}{HTML}{0070F3}
+\definecolor{mylightgray}{HTML}{F6F8FA}
+\definecolor{mygray}{HTML}{E5E7EB}
 
-% table settings
-\setlength{\arrayrulewidth}{3pt}
-\arrayrulecolor[HTML]{E5E7EB}
+% tcolorbox settings
+\usepackage{tcolorbox}
+\tcbset{
+    colback=mylightgray, colframe=mygray,
+    toprule=0pt, bottomrule=0pt, leftrule=3pt, rightrule=0pt,
+    left=4pt, right=4pt,
+    arc=0pt
+}
+
+% images
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 % packages
 \usepackage{tabularx}
@@ -29,21 +40,8 @@
 \usepackage[colorlinks,urlcolor=myblue]{hyperref}
 \usepackage{moresize}
 \usepackage{paracol}
-\usepackage{graphicx}
-\graphicspath{ {./images/} }
 \usepackage{tikz}
 \usepackage{qrcode}
-\usepackage{tcolorbox}
-
-% tcolorbox settings
-\definecolor{mylightgray}{HTML}{F6F8FA}
-\definecolor{mygray}{HTML}{E5E7EB}
-\tcbset{
-    colback=mylightgray, colframe=mygray,
-    toprule=0pt, bottomrule=0pt, leftrule=3pt, rightrule=0pt,
-    left=4pt, right=4pt,
-    arc=0pt
-}
 
 % custom commands
 \newcommand{\event}[3]{
