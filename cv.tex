@@ -12,6 +12,9 @@
 % disable page numbering
 \pagenumbering{gobble}
 
+% disable paragraph indent
+\setlength{\parindent}{0pt}
+
 % colors
 \usepackage[table]{xcolor}
 \definecolor{myblue}{HTML}{0070F3}
@@ -30,27 +33,24 @@
 \graphicspath{ {./images/} }
 \usepackage{tikz}
 \usepackage{qrcode}
+\usepackage{tcolorbox}
+
+% tcolorbox settings
+\definecolor{mylightgray}{HTML}{F6F8FA}
+\definecolor{mygray}{HTML}{E5E7EB}
+\tcbset{
+    colback=mylightgray, colframe=mygray,
+    toprule=0pt, bottomrule=0pt, leftrule=3pt, rightrule=0pt,
+    left=4pt, right=4pt,
+    arc=0pt
+}
 
 % custom commands
 \newcommand{\event}[3]{
-    \begin{tabularx}{\linewidth}{| >{\raggedright\arraybackslash}X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X}
-        \rowcolor[HTML]{F6F8FA} #1 & #2 & #3
+    \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X >{\centering\arraybackslash}X >{\raggedleft\arraybackslash}X@{}}
+        #1 & #2 & #3
     \end{tabularx}
     \vspace{-10pt}
-}
-
-\let\oldsection\section
-\renewcommand{\section}[1]{
-    \oldsection*{#1}
-    \vspace{-20pt}
-    \rule{\linewidth}{2pt}
-    \vspace{-30pt}
-}
-
-\let\oldsubsection\subsection
-\renewcommand{\subsection}[1]{
-    \oldsubsection*{#1}
-    \vspace{-5pt}
 }
 
 \title{\vspace{-40pt} \HUGE \textbf{MANUEL} \\[-20pt] QUARNETI \vspace{-40pt}}
@@ -80,94 +80,113 @@
     \end{flushright}
 \end{paracol}
 
-\columnratio{0.75}
-\setlength{\columnsep}{70pt}
+\columnratio{0.7}
+\setlength{\columnsep}{50pt}
 \begin{paracol}{2}
-    \section{\faGraduationCap \ Education}
+    \section*{\faGraduationCap \ Education}
 
-    \subsection{\href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}}
-    \event
-        {\faCalendar* 2019 - Now}
-        {\href{https://www.unibo.it/en/}{University of Bologna}}
-        {\href{https://www.openstreetmap.org/relation/42809}{Cesena FC, Italy} \ \faCity}
+    \begin{tcolorbox}
+        \subsection*{\href{https://corsi.unibo.it/1cycle/ComputerScienceEngineering}{Bachelor in Computer Science and Engineering}}
+        \event
+            {\faCalendar* 2019 - Now}
+            {\href{https://www.unibo.it/en/}{University of Bologna}}
+            {\href{https://www.openstreetmap.org/relation/42809}{Cesena FC, Italy} \ \faCity}
+    \end{tcolorbox}
 
-    \subsection{High School Diploma in Information Technology}
-    \event
-        {\faCalendar* 2014 - 2019}
-        {\href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci}}
-        {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+    \begin{tcolorbox}
+        \subsection*{High School Diploma in Information Technology}
+        \event
+            {\faCalendar* 2014 - 2019}
+            {\href{https://www.itipfaenza.edu.it/}{I.T.I.P. Luigi Bucci}}
+            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+    \end{tcolorbox}
 
 
-    \section{\faBriefcase \ Experience}
+    \section*{\faBriefcase \ Experience}
 
-    \subsection{Software Developer Internship}
-    \event
-        {\faCalendar* 2018 \textasciitilde 1 month}
-        {\href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.}}
-        {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
-    
-    \noindent
-    \faDesktop \ Windows desktop app development (.NET) \\
-    \faBug \ Website debugging \\
-    \faCoffee \ JBoss web app frontend development \\
-    \faWordpress \ WordPress website management
+    \begin{tcolorbox}
+        \subsection*{Software Developer Internship}
+        \event
+            {\faCalendar* 2018 \textasciitilde 1 month}
+            {\href{https://www.mmbsoftware.it/portalemmb/en/home}{M.M.B. s.r.l.}}
+            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
 
-    \subsection{Software Developer Internship}
-    \event
-        {\faCalendar* 2018 \textasciitilde 1 month}
-        {\href{http://www.bucchi.it/en/}{Bucchi s.r.l.}}
-        {\href{https://www.openstreetmap.org/relation/43140}{Lugo RA, Italy} \ \faCity}
+        \tcblower
+        
+        \faDesktop \ Windows desktop app development (.NET) \\
+        \faBug \ Website debugging \\
+        \faCoffee \ JBoss web app frontend development \\
+        \faWordpress \ WordPress website management
+    \end{tcolorbox}
 
-    \noindent
-    \faDatabase \ Data management (PostgreSQL) \\
-    \faPython \ Python scripting \\
-    \faFlask \ Flask web app development
+    \begin{tcolorbox}
+        \subsection*{Software Developer Internship}
+        \event
+            {\faCalendar* 2018 \textasciitilde 1 month}
+            {\href{http://www.bucchi.it/en/}{Bucchi s.r.l.}}
+            {\href{https://www.openstreetmap.org/relation/43140}{Lugo RA, Italy} \ \faCity}
 
-    \subsection{Computer Technician Internship}
-    \event
-        {\faCalendar* 2017 \textasciitilde 1.5 months}
-        {\href{https://www.t4lab.it/}{T4 LAB}}
-        {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+        \tcblower
 
-    \noindent
-    \faLaptop \ PCs repair \\
-    \faShieldVirus \ Malware removal \\
-    \faRecycle \ Windows mantainance and troubleshooting \\
-    \faHdd \ Disk backups and OS installations
+        \faDatabase \ Data management (PostgreSQL) \\
+        \faPython \ Python scripting \\
+        \faFlask \ Flask web app development
+    \end{tcolorbox}
+
+    \begin{tcolorbox}
+        \subsection*{Computer Technician Internship}
+        \event
+            {\faCalendar* 2017 \textasciitilde 1.5 months}
+            {\href{https://www.t4lab.it/}{T4 LAB}}
+            {\href{https://www.openstreetmap.org/relation/43004}{Faenza RA, Italy} \ \faCity}
+
+        \tcblower
+
+        \faLaptop \ PCs repair \\
+        \faShieldVirus \ Malware removal \\
+        \faRecycle \ Windows mantainance and troubleshooting \\
+        \faHdd \ Disk backups and OS installations
+    \end{tcolorbox}
 
 
     \switchcolumn
-    \flushright
 
-    \section{Skills \ \faLightbulb}
 
-    \subsection{Languages}
-    Italian (Mother tongue) \ \includegraphics[width=10pt]{it} \\
-    English (CEFR C1) \ \includegraphics[width=10pt]{gb-eng}
+    \section*{\faLightbulb \ Skills}
 
-    \subsection{Operating Systems}
-    Fedora/RHEL/CentOS \ \textcolor[HTML]{EE0000}{\faRedhat} \\
-    Ubuntu/Debian \ \textcolor[HTML]{E95420}{\faUbuntu} \\
-    Windows \ \textcolor[HTML]{0078D6}{\faWindows}
+    \begin{tcolorbox}
+        \subsection*{Languages}
+        \includegraphics[width=10pt]{it} \ Italian (Mother tongue) \\
+        \includegraphics[width=10pt]{gb-eng} \ English (CEFR C1)
+    \end{tcolorbox}
 
-    \subsection{Technologies}
-    Python \ \faPython \\
-    Go \ \faGoogle \\
-    C \ \faFileCode \\
-    Java \ \faJava\\
-    (My)SQL \ \faDatabase \\
-    x86 Assembly \ \faMicrochip \\
-    HTML5/CSS3/JS \ \faCode \\
-    Hugo \ \faGlobe \\
-    BASH \ \faTerminal \\
-    LaTeX \ \faFilePdf \\
-    Git and GitHub \ \faGithub
+    \begin{tcolorbox}
+        \subsection*{Operating Systems}
+        \textcolor[HTML]{EE0000}{\faRedhat} \ Fedora/RHEL/CentOS \\
+        \textcolor[HTML]{E95420}{\faUbuntu} \ Ubuntu/Debian \\
+        \textcolor[HTML]{0078D6}{\faWindows} \ Windows
+    \end{tcolorbox}
 
-    \vspace{100pt}
+    \begin{tcolorbox}
+        \subsection*{Technologies}
+        \faPython \ Python \\
+        \faGoogle \ Go \\
+        \faFileCode \ C \\
+        \faJava \ Java \\
+        \faDatabase \ (My)SQL \\
+        \faMicrochip \ x86 Assembly \\
+        \faCode \ HTML5/CSS3/JS \\
+        \faGlobe \ Hugo \\
+        \faTerminal \ BASH \\
+        \faFilePdf \ LaTeX \\
+        \faGithub \ Git and GitHub
+    \end{tcolorbox}
 
-    \begin{center}
+    \vspace{105pt}
+
+    \begin{flushright}
         \hypersetup{urlcolor=black}
         \qrcode[height=85pt]{MECARD:N:Quarneti,Manuel;EMAIL:manuelquarneti@gmail.com;URL:https://mq1.eu}
-    \end{center}
+    \end{flushright}
 \end{paracol}
 \end{document}
